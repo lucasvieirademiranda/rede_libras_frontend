@@ -1,0 +1,43 @@
+button#search {
+    position: relative;
+    top: 25px;
+    left: 15px;
+}
+
+div#searchResult {
+    overflow-y: auto;
+    max-height: 410px;
+}
+
+div#searchResult ul.collection {
+    border: 0;
+}
+
+div#searchResult li.collection-item {
+    border: 1px black !important;
+}
+
+div#video {
+    padding-top: 150px;
+    text-align: center;
+    border: solid 1px black; 
+    height: 400px;
+}
+
+@media screen and (min-width: 902px) {
+    
+    .entityLogo {
+        width: 55%;
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width: 902px) {
+
+    .entityLogo {
+        width: 100%;
+        height: auto;
+    }
+
+}
