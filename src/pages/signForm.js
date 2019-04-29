@@ -262,6 +262,9 @@ class SignForm extends React.Component
         return (
             <div>
                 <Row>
+                    <h3>Cadastro de Sinais</h3>
+                </Row>
+                <Row>
                     <Col s={12}>
                         <TextInput s={12} label="Sinal" placeholder="Sinal" maxLength="250" value={this.state.sign} onChange={(event) => { this.setState({ sign: event.target.value })} } />
                     </Col>

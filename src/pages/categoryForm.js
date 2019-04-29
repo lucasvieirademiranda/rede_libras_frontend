@@ -135,6 +135,9 @@ class UserForm extends React.Component
         return (
             <div>
                 <Row>
+                    <h3>Cadastro de Categorias</h3>
+                </Row>
+                <Row>
                     <TextInput s={12} label="Categoria" placeholder="Categoria" maxlength="250" value={this.state.name} onChange={(event) => { this.setState({ name: event.target.value })} } />
                 </Row>
                 <Row>

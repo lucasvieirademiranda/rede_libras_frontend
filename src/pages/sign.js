@@ -65,6 +65,9 @@ class User extends React.Component {
 		return (
             <div>
                 <Row>
+                    <h3>Sinais</h3>
+                </Row>
+                <Row>
                     <Button style={ { float: 'right' } } waves='light' node='a' href='/signs/add'>Adicionar</Button>
                 </Row>
                 <Row>

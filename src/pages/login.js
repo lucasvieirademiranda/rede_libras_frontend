@@ -73,7 +73,7 @@ class Login extends React.Component
             <div>
                 <Row>
                     <Col m={0} l={2}></Col>
-                    <Col m={12} l={6}>
+                    <Col m={12} l={6} style={{ textAlign: "center" }}>
                         <Col s={12}>
                             <TextInput s={12} label="Usuário" placeholder="Ex: janice" maxlength="250" onChange={(event) => { this.setState({ user: event.target.value }) } } />
                         </Col>

@@ -98,6 +98,9 @@ class SignView extends React.Component
         return (
             <div>
                 <Row>
+                    <h3>Cadastro de Sinais</h3>
+                </Row>
+                <Row>
                     <TextInput s={12} readonly='readonly' label="Sinal" placeholder="Sinal" size="250" value={this.state.sign} onChange={(event) => { this.setState({ sign: event.target.value })} } />
                 </Row>
                 <Row>
@@ -166,7 +169,7 @@ class SignView extends React.Component
                 <Row>
                     <Col s={12}>
                         <div className="file-field input-field">
-                            <div className="btn">
+                            <div className="btn disabled">
                                 <span>Video</span>
                                 <input type="file" onChange={ (event) => this.onChangeFile(event) } />
                             </div>

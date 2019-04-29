@@ -150,6 +150,9 @@ class UserForm extends React.Component
         return (
             <div>
                 <Row>
+                    <h3>Cadastro de Usuários</h3>
+                </Row>
+                <Row>
                     <TextInput s={12} label="Nome" placeholder="Nome" maxlength="250" value={this.state.name} onChange={(event) => { this.setState({ name: event.target.value })} } />
                     <TextInput s={12} label="E-mail" placeholder="E-mail" maxlength="250" value={this.state.mail} onChange={(event) => { this.setState({ mail: event.target.value })} } />
                     <TextInput s={12} label="Usuário" placeholder="Usuário" maxlength="250" value={this.state.user} onChange={(event) => { this.setState({ user: event.target.value })} } />

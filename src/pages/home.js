@@ -320,7 +320,7 @@ class Home extends React.Component {
                         <NavItem href="/login">Login</NavItem>
                     </Navbar>
                 </Row>
-                <Row>
+                <Row style={{ marginBottom: "0px" }}>
                     <Col s={12} m={12} l={4}>
                         <Col s={12} m={12}>
                             <Select
@@ -356,11 +356,14 @@ class Home extends React.Component {
 
                                     open={this.state.modal}
 
-                                    style={{ maxWidth: "700px" }}
+                                    style={{ maxWidth: "600px" }}
 
                                     options={{
                                         onOpenStart: (event) => {
                                             this.setState({ modal: true });
+                                        },
+                                        onCloseStart: (event) => {
+                                            this.setState({ modal: false });
                                         }
                                     }}
 
@@ -373,7 +376,11 @@ class Home extends React.Component {
 
                                     children={
                                         this.state.modal && <div style={{ textAlign: "center" }}>
-                                            <Webcam screenshotQuality={1} audio={false} />
+                                            <Webcam
+                                                width={500}
+                                                height={370}
+                                                screenshotQuality={1} 
+                                                audio={false} />
                                         </div>
                                     }
 
@@ -399,12 +406,12 @@ class Home extends React.Component {
                         </Col>
                     </Col>
                     <Col s={12} m={12} l={8}>
-                        <Row>
+                        <Row style={{ marginBottom: "5px" }}>
                             {this.state.video 
                             ? <ReactPlayer url={this.state.video} controls width='100%' height='400px' />
                             : <div id="video"><img src={movie} title="vídeo do sinal" width="100" height="100" /></div>}
                         </Row>
-                        <Row style={{ textAlign: "right" }}>
+                        <Row style={{ textAlign: "right", marginBottom: "0px" }}>
                             <Button waves="light" small style={{ marginRight: "10px" }} disabled={this.state.id == 0} onClick={this.onLike}>
                                 {this.state.like}
                                 <Icon left>thumb_up</Icon>
@@ -414,7 +421,7 @@ class Home extends React.Component {
                                 <Icon left>thumb_down</Icon>
                             </Button>
                         </Row>
-                        <Row>
+                        <Row style={{ marginBottom: "0px" }}>
                             <Textarea s={12} disabled label="Exemplo de Frase" placeholder="" value={this.state.example} />
                         </Row>
                     </Col>

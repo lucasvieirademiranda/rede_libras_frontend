@@ -83,6 +83,9 @@ class UserView extends React.Component
         return (
             <div>
                 <Row>
+                    <h3>Cadastro de Usuários</h3>
+                </Row>
+                <Row>
                     <Input l={6} readonly='readonly' label="Nome" placeholder="Nome" size="250" value={this.state.name} onChange={(event) => { this.setState({ name: event.target.value })} } />
                 </Row>
                 <Row>
