@@ -5,12 +5,15 @@ import { Container } from 'react-materialize';
 
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import Category from '../pages/category';
-import CategoryForm from '../pages/categoryForm';
-import CategoryView from '../pages/categoryView';
 import Home from "../pages/home";
 import System from "../pages/system";
 import Login from "../pages/login";
+import Category from '../pages/category';
+import CategoryForm from '../pages/categoryForm';
+import CategoryView from '../pages/categoryView';
+import Hand from '../pages/hand';
+import HandForm from '../pages/handForm';
+import HandView from '../pages/handView';
 import User from "../pages/user";
 import UserForm from "../pages/userForm";
 import UserView from '../pages/userView';
@@ -50,6 +53,10 @@ const Main = () => (
                 <PrivateRoute exact path='/categories/add' component={CategoryForm} />
                 <PrivateRoute exact path='/categories/edit/:id' component={CategoryForm} />
                 <PrivateRoute exact path='/categories/delete/:id' component={CategoryView} />
+                <PrivateRoute exact path='/hands' component={Hand} />
+                <PrivateRoute exact path='/hands/add' component={HandForm} />
+                <PrivateRoute exact path='/hands/edit/:id' component={HandForm} />
+                <PrivateRoute exact path='/hands/delete/:id' component={HandView} />
                 <PrivateRoute exact path="/users" component={User} />
                 <PrivateRoute exact path='/users/add' component={UserForm} />
                 <PrivateRoute exact path='/users/edit/:id' component={UserForm} />

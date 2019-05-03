@@ -2,9 +2,8 @@
   "name": "fcm_libras",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://libras.fee.unicamp.br/",
+  "homepage": "http://libras.fee.unicamp.br:8070/",
   "dependencies": {
-    "ag-grid": "^18.1.2",
     "ag-grid-community": "^20.2.0",
     "ag-grid-react": "^20.2.0",
     "axios": "^0.18.0",

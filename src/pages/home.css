@@ -24,6 +24,31 @@ div#video {
     height: 400px;
 }
 
+.modal .modal-content {
+    padding: 10px !important;
+}
+
+.modal .modal-content  h4{
+    margin: 0 !important;
+}
+
+.player-wrapper-border {
+    position: relative;
+    border: solid 1px black;
+    padding-top: 56.25%; /* 1080 / 1980 = 0.5625 */
+}
+
+.player-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 1080 / 1980 = 0.5625 */
+}
+  
+.react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 @media screen and (min-width: 902px) {
     
     .entityLogo {

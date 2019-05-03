@@ -356,7 +356,7 @@ class Home extends React.Component {
 
                                     open={this.state.modal}
 
-                                    style={{ maxWidth: "600px" }}
+                                    style={{ maxWidth: "400px" }}
 
                                     options={{
                                         onOpenStart: (event) => {
@@ -377,8 +377,8 @@ class Home extends React.Component {
                                     children={
                                         this.state.modal && <div style={{ textAlign: "center" }}>
                                             <Webcam
+                                                style={{ width: "100%", maxHeight: "300px" }}
                                                 width={500}
-                                                height={370}
                                                 screenshotQuality={1} 
                                                 audio={false} />
                                         </div>
@@ -408,8 +408,19 @@ class Home extends React.Component {
                     <Col s={12} m={12} l={8}>
                         <Row style={{ marginBottom: "5px" }}>
                             {this.state.video 
-                            ? <ReactPlayer url={this.state.video} controls width='100%' height='400px' />
-                            : <div id="video"><img src={movie} title="vídeo do sinal" width="100" height="100" /></div>}
+                            ? 
+                            <div className="player-wrapper">
+                                <ReactPlayer
+                                    className="react-player"
+                                    url={this.state.video} 
+                                    controls
+                                    config={{file: { attributes: { controlsList: "nodownload" } }}}
+                                    onContextMenu={(event) => event.preventDefault()}
+                                    width='100%' 
+                                    height='100%' />
+                            </div>
+                            :
+                            <div className="player-wrapper-border"></div>}
                         </Row>
                         <Row style={{ textAlign: "right", marginBottom: "0px" }}>
                             <Button waves="light" small style={{ marginRight: "10px" }} disabled={this.state.id == 0} onClick={this.onLike}>

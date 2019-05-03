@@ -8,8 +8,9 @@ import {
     Button
 } from 'react-materialize';
 
-import '../../node_modules/ag-grid/dist/styles/ag-grid.css';
-import '../../node_modules/ag-grid/dist/styles/ag-theme-balham.css';
+import '../../node_modules/ag-grid-community/dist/styles/ag-grid.css';
+import '../../node_modules/ag-grid-community/dist/styles/ag-theme-material.css';
+
 import './ag-grid-corrections.css';
 
 import remove from  '../images/delete_32x32.png';
@@ -71,7 +72,7 @@ class User extends React.Component {
                     <Button style={ { float: 'right' } } waves='light' node='a' href='/users/add'>Adicionar</Button>
                 </Row>
                 <Row>
-                    <div className="ag-theme-balham" style={{ height: '400px', width: '100%' }}>
+                    <div className="ag-theme-material" style={{ height: '400px', width: '100%' }}>
                         <AgGridReact
                             onGridReady = {this.onGridReady}
                             columnDefs={this.state.columnDefs}
@@ -79,7 +80,8 @@ class User extends React.Component {
                             overlayLoadingTemplate={this.state.overlayLoadingTemplate}
                             overlayNoRowsTemplate={this.state.overlayNoRowsTemplate}
                             pagination={true}
-                            paginationPageSize={20}>
+                            paginationPageSize={10}
+                            suppressHorizontalScroll={true}>
                         </AgGridReact>
                     </div>
                 </Row>

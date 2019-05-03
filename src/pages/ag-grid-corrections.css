@@ -1,3 +1,5 @@
-.ag-theme-balham .ag-filter label {
-    padding-left: 30px;
-}
+.ag-theme-material .ag-filter-condition [type="radio"]:not(:checked), 
+.ag-theme-material .ag-filter-condition [type="radio"]:checked {
+    position: relative;
+    opacity: 1;
+} 

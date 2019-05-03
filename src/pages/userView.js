@@ -4,7 +4,7 @@ import rest from '../components/rest';
 import {
     Row,
     Button,
-    Input
+    TextInput
 } from 'react-materialize';
 
 import toaster from '../components/toaster';
@@ -86,13 +86,13 @@ class UserView extends React.Component
                     <h3>Cadastro de Usuários</h3>
                 </Row>
                 <Row>
-                    <Input l={6} readonly='readonly' label="Nome" placeholder="Nome" size="250" value={this.state.name} onChange={(event) => { this.setState({ name: event.target.value })} } />
+                    <TextInput s={12} readonly='readonly' label="Nome" placeholder="Nome" size="250" value={this.state.name} onChange={(event) => { this.setState({ name: event.target.value })} } />
                 </Row>
                 <Row>
-                    <Input l={6} readonly='readonly' label="Usuário" placeholder="Usuário" size="250" value={this.state.user} onChange={(event) => { this.setState({ user: event.target.value })} } />
+                    <TextInput s={12} readonly='readonly' label="Usuário" placeholder="Usuário" size="250" value={this.state.user} onChange={(event) => { this.setState({ user: event.target.value })} } />
                 </Row>
                 <Row>
-                    <Input l={6} readonly='readonly' label="E-mail" placeholder="E-mail" size="250" value={this.state.mail} onChange={(event) => { this.setState({ mail: event.target.value })} } />
+                    <TextInput s={12} readonly='readonly' label="E-mail" placeholder="E-mail" size="250" value={this.state.mail} onChange={(event) => { this.setState({ mail: event.target.value })} } />
                 </Row>
                 <Row>
                     <Button waves='light' className='red' node='a' href='/users'>Voltar</Button>&nbsp;

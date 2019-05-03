@@ -24,6 +24,7 @@ class SignForm extends React.Component
         example: '',
         isGeneral: "1",
         region: '',
+        hand: '',
         states: [],
         categories: [],
         file_name: '',
@@ -80,8 +81,6 @@ class SignForm extends React.Component
                 })
                 .catch((error) => {
 
-                    debugger;
-
                     if (error.response && error.response.data)
                     {
                         var data = error.response.data;
@@ -125,6 +124,7 @@ class SignForm extends React.Component
                         sign: data.sign,
                         example: data.example,
                         isGeneral: data.isGeneral.toString(),
+                        hand: data.hand,
                         region: data.region,
                         states: data.states,
                         categories: data.categories,
@@ -145,6 +145,7 @@ class SignForm extends React.Component
         data.append("sign", this.state.sign);
         data.append("example", this.state.example);
         data.append("isGeneral", this.state.isGeneral);
+        data.append("hand", this.state.hand ? JSON.stringify(this.state.hand) : '');
         data.append("region", this.state.region ? JSON.stringify(this.state.region) : '');
         data.append("states", this.state.states.length > 0 ? JSON.stringify(this.state.states) : '');
         data.append("categories", this.state.categories.length > 0 ? JSON.stringify(this.state.categories) : '');
@@ -204,6 +205,20 @@ class SignForm extends React.Component
                 isGeneral: isGeneral
             })
         }
+
+    };
+
+    onLoadHands = (inputValue, callback) => {
+
+        var request = rest();
+
+        request.get('/hand/dropDownList/' + inputValue)
+               .then((response) => {
+
+                   var hands = response.data;
+                   callback(hands);
+
+               })
 
     };
 
@@ -329,6 +344,18 @@ class SignForm extends React.Component
                             placeholder={"Selecione uma ou mais categorias..."}
                             loadOptions={this.onLoadCategories}
                             onChange={ (data, action) => { this.setState({ categories: data }) } }
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col s={12}>
+                        <AsyncSelect
+                            value={this.state.hand}
+                            cacheOptions
+                            defaultOptions
+                            placeholder={"Seleciona uma configuração de mão..."}
+                            loadOptions={this.onLoadHands}
+                            onChange={(data, action) => { this.setState({ hand: data }) }}
                         />
                     </Col>
                 </Row>
